@@ -1,0 +1,335 @@
+[
+    {
+        "name": "Hannah Christensen (she/her)",
+        "link": "https://intelligent-earth.ox.ac.uk/people/hannah-christensen",
+        "description": "I am Associate Professor of Physical Climate in the Physics Department, and a tutorial fellow at Wadham College. I lead the Atmospheric Processes group.\nProcesses occur in the atmosphere on a wide range of spatio-temporal scales, from cloud processes on the micrometre scale, through convective aggregation on the hundreds of kilometre scale, up to global scale emergent phenomena such as the El Nino-Southern Oscillation (ENSO). Yet we require our weather and climate models to capture all of these processes and their interactions to make accurate predictions \u2013 a formidable challenge! To improve predictions, we need a deeper understanding of the underlying physics together with an accurate characterisation of uncertainties associated with the modelling process. This is the overarching aim of our research.\nKey research themes in my group include: investigation into sources of atmospheric predictability such as the El Nino-Southern Oscillation; the use of extremely high-resolution simulations to understand small-scale atmospheric processes; and the improvement of atmospheric process representation in world leading weather and climate models. To achieve the above, we combine Machine Learning tools with use a variety of other techniques, from analysing simple chaotic systems to global climate simulations.\u00a0The overarching aim is to better understand the behaviour of the atmosphere, and thereby improve our ability to predict this behaviour.\nI am an Associate Editor at JAMES - Journal of Advances in Modelling the Earth System.\u00a0I am also a NERC Independent Research Fellow and hold a Leverhulme Trust Research Leadership Award.\nFor more information, please see the\nAtmospheric Processes\nwebpage.\nEquality, diversity and inclusion (EDI)\nI am EDI lead for the Intelligent Earth CDT. Our goal is for EDI to permeate everything we do, from how we run admissions, to the culture we foster on the CDT.\u00a0If you have any questions, comments, or complaints related to EDI issues, please don't hesitate to get in touch via email, or simply pop round my office (F52 in AOPP)."
+    },
+    {
+        "name": "Andrew Markham (he/him)",
+        "link": "https://intelligent-earth.ox.ac.uk/people/andrew-markham-he/him",
+        "description": "I am a Professor of Computer Science and I work on sensors, signal processing (machine learning/AI) and systems. My research revolves around making machines better understand the physical world. I work within the Cyber Physical Systems (CPS) theme in Computer Science, and lead a large group of researchers and students working across a broad and diverse area. Recent projects include how to track and localize people, animals and objects, particularly in environments where technologies like GPS fail, such as underground or indoors. This has led to the exploration of many different sensing modalities, such as mmWave Radar, Thermal Imaging, Acoustics, Lidar etc. My work is highly cross-disciplinary and I collaborate with colleagues from a wide range of disciplines. I am passionate about using technology to answer questions that were previously impossible - such as tracking badgers underground in 3D using low-frequency magneto-inductive positioning, or enabling large scale individual tracking of lion and elephant in Africa using custom acoustic sensors. More information can be found on my\ndepartmental\nwebpage, my\nScholar\nprofile or my\npersonal\nwebpage."
+    },
+    {
+        "name": "Sophie Nixey (she/her)",
+        "link": "https://intelligent-earth.ox.ac.uk/people/sophie-nixey-0",
+        "description": ""
+    },
+    {
+        "name": "Stephen Roberts (he/him)",
+        "link": "https://intelligent-earth.ox.ac.uk/people/stephen-roberts",
+        "description": "My main area of research lies in machine learning approaches to data analysis. I've particular interests in the development of machine learning theory for problems in time series analysis and dynamical systems. My current research develops a range of methods for diverse problem domains including astrophysics, ecology, finance and data-centric engineering. I lead the\nMachine Learning Research Group\n, I'm a Professorial Fellow of\nSomerville College\n, founding Director of the\nEPSRC Centre for Doctoral Training in Autonomous, Intelligent Machines and Systems (AIMS)\n, Director of the Oxford\nELLIS\nunit, a Fellow of the\nTuring Institute\nand, until summer 2021, was Director of the\nOxford-Man Institute.\nI'm also Co-Founder and Scientific Advisor of\nMind Foundry\nand co-lead of Oxford's\nSchmidt AI in Science Postdoctoral Fellowship programme.\nFull publications, and links to recent DPhil theses, can be found via my webpage\nhttps://www.robots.ox.ac.uk/~sjrob/"
+    },
+    {
+        "name": "Louise Slater (she/her)",
+        "link": "https://intelligent-earth.ox.ac.uk/people/louise-slater",
+        "description": "I am Professor of Hydroclimatology in the\nSchool of Geography and the Environment\nand Fellow of\nHertford College\n.\nI lead the\nHydro-climate extremes\nresearch group, which develops computational approaches to detect, attribute, predict, and project how changes in climate and land cover may affect water-related extremes and society over sub-daily to multi-decadal timescales.\nWe undertake research on a wide range of topics including floods, drought, extreme weather, groundwater, landcapes, seasonal to decadal forecasting, climate models, and Earth Observation. I am Editor of the EGU journal\nHydrology and Earth System Sciences,\nAssociate Editor of the AGU journal\nEarth's Future\n, and a UKRI Future Leaders Fellow.\nFor further information, please consult our latest publications on our\ngroup webpage\n, or on\nORCID\n/\nGoogle Scholar\n."
+    },
+    {
+        "name": "Laura Stevens (they/them or she/her)",
+        "link": "https://intelligent-earth.ox.ac.uk/people/laura-stevens",
+        "description": "I am Associate Professor of Climate and Earth Surface Processes in the\nDepartment of Earth Sciences\n,\u00a0and a Supernumerary Fellow of\nUniversity College\n.\nIn Earth Sciences, I lead a research group on modern-day ice-sheet dynamics, with a focus on understanding how\nice-sheet surface melting modulates ice-sheet flow. Our approach pairs in-situ geophysical observations with time-dependent inverse methods, computational modeling, and remotely sensed observations. We investigate Greenland and Antarctic ice sheet, ice shelf, and outlet glacier flow dynamics to better understand the physical mechanisms that destabilize ice sheets with increased surface meltwater production in our warming climate.\u00a0For further details on the research, please see my\nfaculty webpage\n!\nMy role in the Intelligent Earth CDT is linking CDT DPhil researchers with advisors and research projects involving supervision within the Earth Sciences department.\u00a0For further information on the wide range of research happening in Earth Sciences, have a look through recent department\npublication highlights\nand our department's\nresearch themes\n."
+    },
+    {
+        "name": "Philip Stier (he/him)",
+        "link": "https://intelligent-earth.ox.ac.uk/people/philip-stier",
+        "description": "I am a Professor of Atmospheric Physics working on physical aspects of the climate system, with a focus on clouds, aerosols, and radiation. Clouds play a key role in the climate system, modulating Earth's radiation balance and driving its hydrological cycle. The response of clouds to our changing climate (cloud feedbacks) and to changes in air pollution (aerosol-cloud interactions) remains poorly understood and constitutes the largest uncertainty in our ability to predict climate change.\nIn our\u00a0dynamic\nClimate Processes\nresearch group, we tackle these outstanding climate science questions from multiple approaches, combining theory, numerical modelling, Earth observations with AI and machine learning. \u00a0You can find my publications online under\nORCID\nand\nGoogle Scholar\n."
+    },
+    {
+        "name": "Tianning (Tim) Tang",
+        "link": "https://intelligent-earth.ox.ac.uk/people/tianning-tang",
+        "description": "Tim Tang is currently working as a Course Director of the Intelligent Earth CDT programme and also an Eric and Wendy Schmidt AI in Science Postdoctoral Fellow at the University of Oxford. He graduated with a BEng from the University of Nottingham. He moved straight to a DPhil at Oxford publishing 5 journal papers including three JFMs. He won first place in the Osborne Reynolds Day competition for the UK's best DPhil student in fluid mechanics. His thesis covered the analysis of field data, experiments, numerical modelling using two different models and the application of data science methods to ocean engineering problems. His current research focuses on extreme events in fluid mechanics with an emphasis on machine learning, including data-driven predictions on extreme waves and extreme structural loading, considering leading order physics such as nonlinear wave dynamics and instabilities, breaking waves, and long-short wave interaction. His recent research on Rogue Wave has been showcased in\nBBC Science Focus\n."
+    },
+    {
+        "name": "Yee Whye Teh (he/him)",
+        "link": "https://intelligent-earth.ox.ac.uk/people/yee-whye-teh",
+        "description": "I am a professor at the Department of Statistics of the University of Oxford and a research director at Google DeepMind. I work on statistical machine learning, with particular focus on probabilistic learning, deep learning, meta learning, Bayesian nonparametrics, variational inference, and Monte Carlo. Recently my publications have been in uncertainty quantification, continual learning, reliability & robustness, large language models, and AI for Science.\nFurther details can be found on my\nwebsite\nand research publications at\nGoogle Scholar page\n."
+    },
+    {
+        "name": "Adrian Thomas (he/him)",
+        "link": "https://intelligent-earth.ox.ac.uk/people/adrian-thomas",
+        "description": "I am interested in all areas of Evolutionary Biomechanics and Bioinspired Engineering and Technology. My research focusses on theoretical and experimental analyses of biomechanics as a tool that allows the use of physics and engineering to make concrete qualitative and quantitative predictions about evolutionary adaptations, particularly around aerodynamics, stability and control in flying animals - the main research area of the Oxford Animal Flight group. I am also deeply interested in supporting the development and exploitation of bioinspired technologies, and have pursued this through the formation of spinout companies including Animal Dynamics ltd., where I was Founder, CSO and most recently CEO."
+    },
+    {
+        "name": "Helen Johnson",
+        "link": "https://intelligent-earth.ox.ac.uk/people/helen-johnson"
+    },
+    {
+        "name": "Richard Katz",
+        "link": "https://intelligent-earth.ox.ac.uk/people/richard-katz"
+    },
+    {
+        "name": "Steven Kelly",
+        "link": "https://intelligent-earth.ox.ac.uk/people/steven-kelly"
+    },
+    {
+        "name": "Mike Kendall",
+        "link": "https://intelligent-earth.ox.ac.uk/people/mike-kendall"
+    },
+    {
+        "name": "Milan Kl\u00f6wer ",
+        "link": "https://intelligent-earth.ox.ac.uk/people/milan-klower"
+    },
+    {
+        "name": "Paula Koelemeijer",
+        "link": "https://intelligent-earth.ox.ac.uk/people/paula-koelemeijer"
+    },
+    {
+        "name": "Moritz Kraemer",
+        "link": "https://intelligent-earth.ox.ac.uk/people/moritz-kraemer"
+    },
+    {
+        "name": "Felix Leach",
+        "link": "https://intelligent-earth.ox.ac.uk/people/felix-leach"
+    },
+    {
+        "name": "Jamie Lorimer",
+        "link": "https://intelligent-earth.ox.ac.uk/people/jamie-lorimer"
+    },
+    {
+        "name": "Perla Maiolino",
+        "link": "https://intelligent-earth.ox.ac.uk/people/perla-maiolino"
+    },
+    {
+        "name": "Yadvinder Malhi",
+        "link": "https://intelligent-earth.ox.ac.uk/people/yadvinder-malhi"
+    },
+    {
+        "name": "Andrew Markham (he/him)",
+        "link": "https://intelligent-earth.ox.ac.uk/people/andrew-markham-he/him",
+        "description": "I am a Professor of Computer Science and I work on sensors, signal processing (machine learning/AI) and systems. My research revolves around making machines better understand the physical world. I work within the Cyber Physical Systems (CPS) theme in Computer Science, and lead a large group of researchers and students working across a broad and diverse area. Recent projects include how to track and localize people, animals and objects, particularly in environments where technologies like GPS fail, such as underground or indoors. This has led to the exploration of many different sensing modalities, such as mmWave Radar, Thermal Imaging, Acoustics, Lidar etc. My work is highly cross-disciplinary and I collaborate with colleagues from a wide range of disciplines. I am passionate about using technology to answer questions that were previously impossible - such as tracking badgers underground in 3D using low-frequency magneto-inductive positioning, or enabling large scale individual tracking of lion and elephant in Africa using custom acoustic sensors. More information can be found on my\ndepartmental\nwebpage, my\nScholar\nprofile or my\npersonal\nwebpage."
+    },
+    {
+        "name": "Hauke Marquardt",
+        "link": "https://intelligent-earth.ox.ac.uk/people/hauke-marquardt"
+    },
+    {
+        "name": "Chris Martin",
+        "link": "https://intelligent-earth.ox.ac.uk/people/chris-martin"
+    },
+    {
+        "name": "Tamsin Mather",
+        "link": "https://intelligent-earth.ox.ac.uk/people/tamsin-mather"
+    },
+    {
+        "name": "Robert Montgomery",
+        "link": "https://intelligent-earth.ox.ac.uk/people/robert-montgomery"
+    },
+    {
+        "name": "David Moreno Mateos",
+        "link": "https://intelligent-earth.ox.ac.uk/people/david-moreno-mateos"
+    },
+    {
+        "name": "Thomas Morstyn",
+        "link": "https://intelligent-earth.ox.ac.uk/people/thomas-morstyn"
+    },
+    {
+        "name": "Sophie Nixey (she/her)",
+        "link": "https://intelligent-earth.ox.ac.uk/people/sophie-nixey-0",
+        "description": ""
+    },
+    {
+        "name": "Richard Palin",
+        "link": "https://intelligent-earth.ox.ac.uk/people/richard-palin"
+    },
+    {
+        "name": "Tim Palmer",
+        "link": "https://intelligent-earth.ox.ac.uk/people/tim-palmer"
+    },
+    {
+        "name": "Ingmar Posner",
+        "link": "https://intelligent-earth.ox.ac.uk/people/ingmar-posner"
+    },
+    {
+        "name": "David Pyle",
+        "link": "https://intelligent-earth.ox.ac.uk/people/david-pyle"
+    },
+    {
+        "name": "Tom Rainforth",
+        "link": "https://intelligent-earth.ox.ac.uk/people/tom-rainforth"
+    },
+    {
+        "name": "Moritz Riede",
+        "link": "https://intelligent-earth.ox.ac.uk/people/moritz-riede"
+    },
+    {
+        "name": "Stephen Roberts (he/him)",
+        "link": "https://intelligent-earth.ox.ac.uk/people/stephen-roberts",
+        "description": "My main area of research lies in machine learning approaches to data analysis. I've particular interests in the development of machine learning theory for problems in time series analysis and dynamical systems. My current research develops a range of methods for diverse problem domains including astrophysics, ecology, finance and data-centric engineering. I lead the\nMachine Learning Research Group\n, I'm a Professorial Fellow of\nSomerville College\n, founding Director of the\nEPSRC Centre for Doctoral Training in Autonomous, Intelligent Machines and Systems (AIMS)\n, Director of the Oxford\nELLIS\nunit, a Fellow of the\nTuring Institute\nand, until summer 2021, was Director of the\nOxford-Man Institute.\nI'm also Co-Founder and Scientific Advisor of\nMind Foundry\nand co-lead of Oxford's\nSchmidt AI in Science Postdoctoral Fellowship programme.\nFull publications, and links to recent DPhil theses, can be found via my webpage\nhttps://www.robots.ox.ac.uk/~sjrob/"
+    },
+    {
+        "name": "Ricardo Rocha",
+        "link": "https://intelligent-earth.ox.ac.uk/people/ricardo-rocha"
+    },
+    {
+        "name": "Alex Rogers",
+        "link": "https://intelligent-earth.ox.ac.uk/people/alex-rogers-0"
+    },
+    {
+        "name": "Gillian Rose",
+        "link": "https://intelligent-earth.ox.ac.uk/people/gillian-rose"
+    },
+    {
+        "name": "Barbara Rossi",
+        "link": "https://intelligent-earth.ox.ac.uk/people/barbara-rossi"
+    },
+    {
+        "name": "Ben Sheldon",
+        "link": "https://intelligent-earth.ox.ac.uk/people/ben-sheldon"
+    },
+    {
+        "name": "Louise Slater (she/her)",
+        "link": "https://intelligent-earth.ox.ac.uk/people/louise-slater",
+        "description": "I am Professor of Hydroclimatology in the\nSchool of Geography and the Environment\nand Fellow of\nHertford College\n.\nI lead the\nHydro-climate extremes\nresearch group, which develops computational approaches to detect, attribute, predict, and project how changes in climate and land cover may affect water-related extremes and society over sub-daily to multi-decadal timescales.\nWe undertake research on a wide range of topics including floods, drought, extreme weather, groundwater, landcapes, seasonal to decadal forecasting, climate models, and Earth Observation. I am Editor of the EGU journal\nHydrology and Earth System Sciences,\nAssociate Editor of the AGU journal\nEarth's Future\n, and a UKRI Future Leaders Fellow.\nFor further information, please consult our latest publications on our\ngroup webpage\n, or on\nORCID\n/\nGoogle Scholar\n."
+    },
+    {
+        "name": "Hannah Christensen (she/her)",
+        "link": "https://intelligent-earth.ox.ac.uk/people/hannah-christensen",
+        "description": "I am Associate Professor of Physical Climate in the Physics Department, and a tutorial fellow at Wadham College. I lead the Atmospheric Processes group.\nProcesses occur in the atmosphere on a wide range of spatio-temporal scales, from cloud processes on the micrometre scale, through convective aggregation on the hundreds of kilometre scale, up to global scale emergent phenomena such as the El Nino-Southern Oscillation (ENSO). Yet we require our weather and climate models to capture all of these processes and their interactions to make accurate predictions \u2013 a formidable challenge! To improve predictions, we need a deeper understanding of the underlying physics together with an accurate characterisation of uncertainties associated with the modelling process. This is the overarching aim of our research.\nKey research themes in my group include: investigation into sources of atmospheric predictability such as the El Nino-Southern Oscillation; the use of extremely high-resolution simulations to understand small-scale atmospheric processes; and the improvement of atmospheric process representation in world leading weather and climate models. To achieve the above, we combine Machine Learning tools with use a variety of other techniques, from analysing simple chaotic systems to global climate simulations.\u00a0The overarching aim is to better understand the behaviour of the atmosphere, and thereby improve our ability to predict this behaviour.\nI am an Associate Editor at JAMES - Journal of Advances in Modelling the Earth System.\u00a0I am also a NERC Independent Research Fellow and hold a Leverhulme Trust Research Leadership Award.\nFor more information, please see the\nAtmospheric Processes\nwebpage.\nEquality, diversity and inclusion (EDI)\nI am EDI lead for the Intelligent Earth CDT. Our goal is for EDI to permeate everything we do, from how we run admissions, to the culture we foster on the CDT.\u00a0If you have any questions, comments, or complaints related to EDI issues, please don't hesitate to get in touch via email, or simply pop round my office (F52 in AOPP)."
+    },
+    {
+        "name": "Andrew Markham (he/him)",
+        "link": "https://intelligent-earth.ox.ac.uk/people/andrew-markham-he/him",
+        "description": "I am a Professor of Computer Science and I work on sensors, signal processing (machine learning/AI) and systems. My research revolves around making machines better understand the physical world. I work within the Cyber Physical Systems (CPS) theme in Computer Science, and lead a large group of researchers and students working across a broad and diverse area. Recent projects include how to track and localize people, animals and objects, particularly in environments where technologies like GPS fail, such as underground or indoors. This has led to the exploration of many different sensing modalities, such as mmWave Radar, Thermal Imaging, Acoustics, Lidar etc. My work is highly cross-disciplinary and I collaborate with colleagues from a wide range of disciplines. I am passionate about using technology to answer questions that were previously impossible - such as tracking badgers underground in 3D using low-frequency magneto-inductive positioning, or enabling large scale individual tracking of lion and elephant in Africa using custom acoustic sensors. More information can be found on my\ndepartmental\nwebpage, my\nScholar\nprofile or my\npersonal\nwebpage."
+    },
+    {
+        "name": "Sophie Nixey (she/her)",
+        "link": "https://intelligent-earth.ox.ac.uk/people/sophie-nixey-0",
+        "description": ""
+    },
+    {
+        "name": "Stephen Roberts (he/him)",
+        "link": "https://intelligent-earth.ox.ac.uk/people/stephen-roberts",
+        "description": "My main area of research lies in machine learning approaches to data analysis. I've particular interests in the development of machine learning theory for problems in time series analysis and dynamical systems. My current research develops a range of methods for diverse problem domains including astrophysics, ecology, finance and data-centric engineering. I lead the\nMachine Learning Research Group\n, I'm a Professorial Fellow of\nSomerville College\n, founding Director of the\nEPSRC Centre for Doctoral Training in Autonomous, Intelligent Machines and Systems (AIMS)\n, Director of the Oxford\nELLIS\nunit, a Fellow of the\nTuring Institute\nand, until summer 2021, was Director of the\nOxford-Man Institute.\nI'm also Co-Founder and Scientific Advisor of\nMind Foundry\nand co-lead of Oxford's\nSchmidt AI in Science Postdoctoral Fellowship programme.\nFull publications, and links to recent DPhil theses, can be found via my webpage\nhttps://www.robots.ox.ac.uk/~sjrob/"
+    },
+    {
+        "name": "Louise Slater (she/her)",
+        "link": "https://intelligent-earth.ox.ac.uk/people/louise-slater",
+        "description": "I am Professor of Hydroclimatology in the\nSchool of Geography and the Environment\nand Fellow of\nHertford College\n.\nI lead the\nHydro-climate extremes\nresearch group, which develops computational approaches to detect, attribute, predict, and project how changes in climate and land cover may affect water-related extremes and society over sub-daily to multi-decadal timescales.\nWe undertake research on a wide range of topics including floods, drought, extreme weather, groundwater, landcapes, seasonal to decadal forecasting, climate models, and Earth Observation. I am Editor of the EGU journal\nHydrology and Earth System Sciences,\nAssociate Editor of the AGU journal\nEarth's Future\n, and a UKRI Future Leaders Fellow.\nFor further information, please consult our latest publications on our\ngroup webpage\n, or on\nORCID\n/\nGoogle Scholar\n."
+    },
+    {
+        "name": "Laura Stevens (they/them or she/her)",
+        "link": "https://intelligent-earth.ox.ac.uk/people/laura-stevens",
+        "description": "I am Associate Professor of Climate and Earth Surface Processes in the\nDepartment of Earth Sciences\n,\u00a0and a Supernumerary Fellow of\nUniversity College\n.\nIn Earth Sciences, I lead a research group on modern-day ice-sheet dynamics, with a focus on understanding how\nice-sheet surface melting modulates ice-sheet flow. Our approach pairs in-situ geophysical observations with time-dependent inverse methods, computational modeling, and remotely sensed observations. We investigate Greenland and Antarctic ice sheet, ice shelf, and outlet glacier flow dynamics to better understand the physical mechanisms that destabilize ice sheets with increased surface meltwater production in our warming climate.\u00a0For further details on the research, please see my\nfaculty webpage\n!\nMy role in the Intelligent Earth CDT is linking CDT DPhil researchers with advisors and research projects involving supervision within the Earth Sciences department.\u00a0For further information on the wide range of research happening in Earth Sciences, have a look through recent department\npublication highlights\nand our department's\nresearch themes\n."
+    },
+    {
+        "name": "Philip Stier (he/him)",
+        "link": "https://intelligent-earth.ox.ac.uk/people/philip-stier",
+        "description": "I am a Professor of Atmospheric Physics working on physical aspects of the climate system, with a focus on clouds, aerosols, and radiation. Clouds play a key role in the climate system, modulating Earth's radiation balance and driving its hydrological cycle. The response of clouds to our changing climate (cloud feedbacks) and to changes in air pollution (aerosol-cloud interactions) remains poorly understood and constitutes the largest uncertainty in our ability to predict climate change.\nIn our\u00a0dynamic\nClimate Processes\nresearch group, we tackle these outstanding climate science questions from multiple approaches, combining theory, numerical modelling, Earth observations with AI and machine learning. \u00a0You can find my publications online under\nORCID\nand\nGoogle Scholar\n."
+    },
+    {
+        "name": "Tianning (Tim) Tang",
+        "link": "https://intelligent-earth.ox.ac.uk/people/tianning-tang",
+        "description": "Tim Tang is currently working as a Course Director of the Intelligent Earth CDT programme and also an Eric and Wendy Schmidt AI in Science Postdoctoral Fellow at the University of Oxford. He graduated with a BEng from the University of Nottingham. He moved straight to a DPhil at Oxford publishing 5 journal papers including three JFMs. He won first place in the Osborne Reynolds Day competition for the UK's best DPhil student in fluid mechanics. His thesis covered the analysis of field data, experiments, numerical modelling using two different models and the application of data science methods to ocean engineering problems. His current research focuses on extreme events in fluid mechanics with an emphasis on machine learning, including data-driven predictions on extreme waves and extreme structural loading, considering leading order physics such as nonlinear wave dynamics and instabilities, breaking waves, and long-short wave interaction. His recent research on Rogue Wave has been showcased in\nBBC Science Focus\n."
+    },
+    {
+        "name": "Yee Whye Teh (he/him)",
+        "link": "https://intelligent-earth.ox.ac.uk/people/yee-whye-teh",
+        "description": "I am a professor at the Department of Statistics of the University of Oxford and a research director at Google DeepMind. I work on statistical machine learning, with particular focus on probabilistic learning, deep learning, meta learning, Bayesian nonparametrics, variational inference, and Monte Carlo. Recently my publications have been in uncertainty quantification, continual learning, reliability & robustness, large language models, and AI for Science.\nFurther details can be found on my\nwebsite\nand research publications at\nGoogle Scholar page\n."
+    },
+    {
+        "name": "Adrian Thomas (he/him)",
+        "link": "https://intelligent-earth.ox.ac.uk/people/adrian-thomas",
+        "description": "I am interested in all areas of Evolutionary Biomechanics and Bioinspired Engineering and Technology. My research focusses on theoretical and experimental analyses of biomechanics as a tool that allows the use of physics and engineering to make concrete qualitative and quantitative predictions about evolutionary adaptations, particularly around aerodynamics, stability and control in flying animals - the main research area of the Oxford Animal Flight group. I am also deeply interested in supporting the development and exploitation of bioinspired technologies, and have pursued this through the formation of spinout companies including Animal Dynamics ltd., where I was Founder, CSO and most recently CEO."
+    },
+    {
+        "name": "Andrew Markham",
+        "link": "https://intelligent-earth.ox.ac.uk/people/andrew-markham"
+    },
+    {
+        "name": "Avidesh Seenath",
+        "link": "https://intelligent-earth.ox.ac.uk/people/avidesh-seenath"
+    },
+    {
+        "name": "Laura Stevens",
+        "link": "https://intelligent-earth.ox.ac.uk/people/laura-stevens-0"
+    },
+    {
+        "name": "Louise Slater",
+        "link": "https://intelligent-earth.ox.ac.uk/people/louise-slater-0"
+    },
+    {
+        "name": "Stephen Roberts",
+        "link": "https://intelligent-earth.ox.ac.uk/people/stephen-roberts-0"
+    },
+    {
+        "name": "Yee Whye Teh",
+        "link": "https://intelligent-earth.ox.ac.uk/people/yee-whye-teh-0"
+    },
+    {
+        "name": "Laura Stevens (they/them or she/her)",
+        "link": "https://intelligent-earth.ox.ac.uk/people/laura-stevens",
+        "description": "I am Associate Professor of Climate and Earth Surface Processes in the\nDepartment of Earth Sciences\n,\u00a0and a Supernumerary Fellow of\nUniversity College\n.\nIn Earth Sciences, I lead a research group on modern-day ice-sheet dynamics, with a focus on understanding how\nice-sheet surface melting modulates ice-sheet flow. Our approach pairs in-situ geophysical observations with time-dependent inverse methods, computational modeling, and remotely sensed observations. We investigate Greenland and Antarctic ice sheet, ice shelf, and outlet glacier flow dynamics to better understand the physical mechanisms that destabilize ice sheets with increased surface meltwater production in our warming climate.\u00a0For further details on the research, please see my\nfaculty webpage\n!\nMy role in the Intelligent Earth CDT is linking CDT DPhil researchers with advisors and research projects involving supervision within the Earth Sciences department.\u00a0For further information on the wide range of research happening in Earth Sciences, have a look through recent department\npublication highlights\nand our department's\nresearch themes\n."
+    },
+    {
+        "name": "Philip Stier (he/him)",
+        "link": "https://intelligent-earth.ox.ac.uk/people/philip-stier",
+        "description": "I am a Professor of Atmospheric Physics working on physical aspects of the climate system, with a focus on clouds, aerosols, and radiation. Clouds play a key role in the climate system, modulating Earth's radiation balance and driving its hydrological cycle. The response of clouds to our changing climate (cloud feedbacks) and to changes in air pollution (aerosol-cloud interactions) remains poorly understood and constitutes the largest uncertainty in our ability to predict climate change.\nIn our\u00a0dynamic\nClimate Processes\nresearch group, we tackle these outstanding climate science questions from multiple approaches, combining theory, numerical modelling, Earth observations with AI and machine learning. \u00a0You can find my publications online under\nORCID\nand\nGoogle Scholar\n."
+    },
+    {
+        "name": "Tianning (Tim) Tang",
+        "link": "https://intelligent-earth.ox.ac.uk/people/tianning-tang",
+        "description": "Tim Tang is currently working as a Course Director of the Intelligent Earth CDT programme and also an Eric and Wendy Schmidt AI in Science Postdoctoral Fellow at the University of Oxford. He graduated with a BEng from the University of Nottingham. He moved straight to a DPhil at Oxford publishing 5 journal papers including three JFMs. He won first place in the Osborne Reynolds Day competition for the UK's best DPhil student in fluid mechanics. His thesis covered the analysis of field data, experiments, numerical modelling using two different models and the application of data science methods to ocean engineering problems. His current research focuses on extreme events in fluid mechanics with an emphasis on machine learning, including data-driven predictions on extreme waves and extreme structural loading, considering leading order physics such as nonlinear wave dynamics and instabilities, breaking waves, and long-short wave interaction. His recent research on Rogue Wave has been showcased in\nBBC Science Focus\n."
+    },
+    {
+        "name": "Graham Taylor",
+        "link": "https://intelligent-earth.ox.ac.uk/people/graham-taylor"
+    },
+    {
+        "name": "Yee Whye Teh (he/him)",
+        "link": "https://intelligent-earth.ox.ac.uk/people/yee-whye-teh",
+        "description": "I am a professor at the Department of Statistics of the University of Oxford and a research director at Google DeepMind. I work on statistical machine learning, with particular focus on probabilistic learning, deep learning, meta learning, Bayesian nonparametrics, variational inference, and Monte Carlo. Recently my publications have been in uncertainty quantification, continual learning, reliability & robustness, large language models, and AI for Science.\nFurther details can be found on my\nwebsite\nand research publications at\nGoogle Scholar page\n."
+    },
+    {
+        "name": "Adrian Thomas (he/him)",
+        "link": "https://intelligent-earth.ox.ac.uk/people/adrian-thomas",
+        "description": "I am interested in all areas of Evolutionary Biomechanics and Bioinspired Engineering and Technology. My research focusses on theoretical and experimental analyses of biomechanics as a tool that allows the use of physics and engineering to make concrete qualitative and quantitative predictions about evolutionary adaptations, particularly around aerodynamics, stability and control in flying animals - the main research area of the Oxford Animal Flight group. I am also deeply interested in supporting the development and exploitation of bioinspired technologies, and have pursued this through the formation of spinout companies including Animal Dynamics ltd., where I was Founder, CSO and most recently CEO."
+    },
+    {
+        "name": "Philip Torr",
+        "link": "https://intelligent-earth.ox.ac.uk/people/philip-torr"
+    },
+    {
+        "name": "Niki Trigoni",
+        "link": "https://intelligent-earth.ox.ac.uk/people/niki-trigoni"
+    },
+    {
+        "name": "Berta Verd Fernandez",
+        "link": "https://intelligent-earth.ox.ac.uk/people/berta-verd-fernandez"
+    },
+    {
+        "name": "Mauricio Villarroel",
+        "link": "https://intelligent-earth.ox.ac.uk/people/mauricio-villarroel"
+    },
+    {
+        "name": "Konstantina Vogiatzaki",
+        "link": "https://intelligent-earth.ox.ac.uk/people/konstantina-vogiatzaki"
+    },
+    {
+        "name": "Irina Voiculescu",
+        "link": "https://intelligent-earth.ox.ac.uk/people/irina-voiculescu"
+    },
+    {
+        "name": "Richard Walker",
+        "link": "https://intelligent-earth.ox.ac.uk/people/richard-walker"
+    },
+    {
+        "name": "Antje Weisheimer",
+        "link": "https://intelligent-earth.ox.ac.uk/people/antje-weisheimer"
+    },
+    {
+        "name": "Tim Woollings",
+        "link": "https://intelligent-earth.ox.ac.uk/people/tim-woollings"
+    },
+    {
+        "name": "Nobuko Yoshida",
+        "link": "https://intelligent-earth.ox.ac.uk/people/nobuko-yoshida"
+    },
+    {
+        "name": "Noa Zilberman",
+        "link": "https://intelligent-earth.ox.ac.uk/people/noa-zilberman"
+    },
+    {
+        "name": "Andrew Zisserman",
+        "link": "https://intelligent-earth.ox.ac.uk/people/andrew-zisserman"
+    }
+]

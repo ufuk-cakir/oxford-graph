@@ -1,0 +1,65 @@
+host: dtcmaclap06
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                         count
+------------------------  -------
+all                             1
+extract_keywords                1
+fetch_supervisor_details        1
+scrape_supervisors              1
+total                           4
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Nov  1 17:39:39 2024]
+localrule scrape_supervisors:
+    output: supervisors.json
+    jobid: 3
+    reason: Forced execution
+    resources: tmpdir=/var/folders/p3/0x4g95k94pj3wfjkpj38lhz40000gp/T
+
+[Fri Nov  1 17:39:42 2024]
+Finished job 3.
+1 of 4 steps (25%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Nov  1 17:39:42 2024]
+localrule fetch_supervisor_details:
+    input: supervisors.json
+    output: detailed_supervisors.json
+    jobid: 2
+    reason: Forced execution
+    resources: tmpdir=/var/folders/p3/0x4g95k94pj3wfjkpj38lhz40000gp/T
+
+[Fri Nov  1 17:39:56 2024]
+Finished job 2.
+2 of 4 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Nov  1 17:39:56 2024]
+localrule extract_keywords:
+    input: detailed_supervisors.json
+    output: supervisors_with_keywords.json
+    jobid: 1
+    reason: Forced execution
+    resources: tmpdir=/var/folders/p3/0x4g95k94pj3wfjkpj38lhz40000gp/T
+
+Terminating processes on user request, this might take some time.
+[Fri Nov  1 17:40:37 2024]
+Error in rule extract_keywords:
+    jobid: 1
+    input: detailed_supervisors.json
+    output: supervisors_with_keywords.json
+    shell:
+        python extract_keywords.py detailed_supervisors.json supervisors_with_keywords.json
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Complete log: .snakemake/log/2024-11-01T173939.474509.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

@@ -1,0 +1,25 @@
+host: dtcmaclap06
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                   count
+------------------  -------
+scrape_supervisors        1
+total                     1
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Nov  1 17:21:54 2024]
+localrule scrape_supervisors:
+    output: supervisors.json
+    jobid: 0
+    reason: Forced execution
+    resources: tmpdir=/var/folders/p3/0x4g95k94pj3wfjkpj38lhz40000gp/T
+
+[Fri Nov  1 17:21:57 2024]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: .snakemake/log/2024-11-01T172154.685379.snakemake.log

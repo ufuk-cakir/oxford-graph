@@ -1,0 +1,250 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 750px;
+                 background-color: #222222;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+             #loadingBar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width: 100%;
+                 height: 750px;
+                 background-color:rgba(200,200,200,0.8);
+                 -webkit-transition: all 0.5s ease;
+                 -moz-transition: all 0.5s ease;
+                 -ms-transition: all 0.5s ease;
+                 -o-transition: all 0.5s ease;
+                 transition: all 0.5s ease;
+                 opacity:1;
+             }
+
+             #bar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width:20px;
+                 height:20px;
+                 margin:auto auto auto auto;
+                 border-radius:11px;
+                 border:2px solid rgba(30,30,30,0.05);
+                 background: rgb(0, 173, 246); /* Old browsers */
+                 box-shadow: 2px 0px 4px rgba(0,0,0,0.4);
+             }
+
+             #border {
+                 position:absolute;
+                 top:10px;
+                 left:10px;
+                 width:500px;
+                 height:23px;
+                 margin:auto auto auto auto;
+                 box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+                 border-radius:10px;
+             }
+
+             #text {
+                 position:absolute;
+                 top:8px;
+                 left:530px;
+                 width:30px;
+                 height:50px;
+                 margin:auto auto auto auto;
+                 font-size:22px;
+                 color: #000000;
+             }
+
+             div.outerBorder {
+                 position:relative;
+                 top:400px;
+                 width:600px;
+                 height:44px;
+                 margin:auto auto auto auto;
+                 border:8px solid rgba(0,0,0,0.1);
+                 background: rgb(252,252,252); /* Old browsers */
+                 background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+                 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+                 background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+                 background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+                 background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+                 background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+                 border-radius:72px;
+                 box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+             }
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+            <div id="loadingBar">
+              <div class="outerBorder">
+                <div id="text">0%</div>
+                <div id="border">
+                  <div id="bar"></div>
+                </div>
+              </div>
+            </div>
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "cyan", "font": {"color": "white"}, "id": "Hannah Christensen (she/her)", "label": "Hannah Christensen (she/her)", "shape": "dot", "size": 10, "title": "\u003cb\u003eHannah Christensen (she/her)\u003c/b\u003e\u003cbr\u003eI am Associate Professor of Physical Climate in the Physics Department, and a tutorial fellow at Wadham College. I lead the Atmospheric Processes group.\nProcesses occur in the atmosphere on a wide range of spatio-temporal scales, from cloud processes on the micrometre scale, through convective aggregation on the hundreds of kilometre scale, up to global scale emergent phenomena such as the El Nino-Southern Oscillation (ENSO). Yet we require our weather and climate models to capture all of these processes and their interactions to make accurate predictions \u2013 a formidable challenge! To improve predictions, we need a deeper understanding of the underlying physics together with an accurate characterisation of uncertainties associated with the modelling process. This is the overarching aim of our research.\nKey research themes in my group include: investigation into sources of atmospheric predictability such as the El Nino-Southern Oscillation; the use of extremely high-resolution simulations to understand small-scale atmospheric processes; and the improvement of atmospheric process representation in world leading weather and climate models. To achieve the above, we combine Machine Learning tools with use a variety of other techniques, from analysing simple chaotic systems to global climate simulations.\u00a0The overarching aim is to better understand the behaviour of the atmosphere, and thereby improve our ability to predict this behaviour.\nI am an Associate Editor at JAMES - Journal of Advances in Modelling the Earth System.\u00a0I am also a NERC Independent Research Fellow and hold a Leverhulme Trust Research Leadership Award.\nFor more information, please see the\nAtmospheric Processes\nwebpage.\nEquality, diversity and inclusion (EDI)\nI am EDI lead for the Intelligent Earth CDT. Our goal is for EDI to permeate everything we do, from how we run admissions, to the culture we foster on the CDT.\u00a0If you have any questions, comments, or complaints related to EDI issues, please don\u0027t hesitate to get in touch via email, or simply pop round my office (F52 in AOPP).", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/hannah-christensen"}, {"color": "orange", "font": {"color": "white"}, "id": "improve predictions", "label": "improve predictions", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e improve predictions", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "weather climate", "label": "weather climate", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e weather climate", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "global climate", "label": "global climate", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e global climate", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "predictability el", "label": "predictability el", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e predictability el", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "el nino", "label": "el nino", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e el nino", "type": "research_area"}, {"color": "cyan", "font": {"color": "white"}, "id": "Andrew Markham (he/him)", "label": "Andrew Markham (he/him)", "shape": "dot", "size": 10, "title": "\u003cb\u003eAndrew Markham (he/him)\u003c/b\u003e\u003cbr\u003eI am a Professor of Computer Science and I work on sensors, signal processing (machine learning/AI) and systems. My research revolves around making machines better understand the physical world. I work within the Cyber Physical Systems (CPS) theme in Computer Science, and lead a large group of researchers and students working across a broad and diverse area. Recent projects include how to track and localize people, animals and objects, particularly in environments where technologies like GPS fail, such as underground or indoors. This has led to the exploration of many different sensing modalities, such as mmWave Radar, Thermal Imaging, Acoustics, Lidar etc. My work is highly cross-disciplinary and I collaborate with colleagues from a wide range of disciplines. I am passionate about using technology to answer questions that were previously impossible - such as tracking badgers underground in 3D using low-frequency magneto-inductive positioning, or enabling large scale individual tracking of lion and elephant in Africa using custom acoustic sensors. More information can be found on my\ndepartmental\nwebpage, my\nScholar\nprofile or my\npersonal\nwebpage.", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/andrew-markham-he/him"}, {"color": "orange", "font": {"color": "white"}, "id": "acoustic sensors", "label": "acoustic sensors", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e acoustic sensors", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "individual tracking", "label": "individual tracking", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e individual tracking", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "sensors signal", "label": "sensors signal", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e sensors signal", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "using technology", "label": "using technology", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e using technology", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "cyber physical", "label": "cyber physical", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e cyber physical", "type": "research_area"}, {"color": "cyan", "font": {"color": "white"}, "id": "Stephen Roberts (he/him)", "label": "Stephen Roberts (he/him)", "shape": "dot", "size": 10, "title": "\u003cb\u003eStephen Roberts (he/him)\u003c/b\u003e\u003cbr\u003eMy main area of research lies in machine learning approaches to data analysis. I\u0027ve particular interests in the development of machine learning theory for problems in time series analysis and dynamical systems. My current research develops a range of methods for diverse problem domains including astrophysics, ecology, finance and data-centric engineering. I lead the\nMachine Learning Research Group\n, I\u0027m a Professorial Fellow of\nSomerville College\n, founding Director of the\nEPSRC Centre for Doctoral Training in Autonomous, Intelligent Machines and Systems (AIMS)\n, Director of the Oxford\nELLIS\nunit, a Fellow of the\nTuring Institute\nand, until summer 2021, was Director of the\nOxford-Man Institute.\nI\u0027m also Co-Founder and Scientific Advisor of\nMind Foundry\nand co-lead of Oxford\u0027s\nSchmidt AI in Science Postdoctoral Fellowship programme.\nFull publications, and links to recent DPhil theses, can be found via my webpage\nhttps://www.robots.ox.ac.uk/~sjrob/", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/stephen-roberts"}, {"color": "orange", "font": {"color": "white"}, "id": "machines systems", "label": "machines systems", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e machines systems", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "scientific advisor", "label": "scientific advisor", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e scientific advisor", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "director oxford", "label": "director oxford", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e director oxford", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "learning approaches", "label": "learning approaches", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e learning approaches", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "training autonomous", "label": "training autonomous", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e training autonomous", "type": "research_area"}, {"color": "cyan", "font": {"color": "white"}, "id": "Louise Slater (she/her)", "label": "Louise Slater (she/her)", "shape": "dot", "size": 10, "title": "\u003cb\u003eLouise Slater (she/her)\u003c/b\u003e\u003cbr\u003eI am Professor of Hydroclimatology in the\nSchool of Geography and the Environment\nand Fellow of\nHertford College\n.\nI lead the\nHydro-climate extremes\nresearch group, which develops computational approaches to detect, attribute, predict, and project how changes in climate and land cover may affect water-related extremes and society over sub-daily to multi-decadal timescales.\nWe undertake research on a wide range of topics including floods, drought, extreme weather, groundwater, landcapes, seasonal to decadal forecasting, climate models, and Earth Observation. I am Editor of the EGU journal\nHydrology and Earth System Sciences,\nAssociate Editor of the AGU journal\nEarth\u0027s Future\n, and a UKRI Future Leaders Fellow.\nFor further information, please consult our latest publications on our\ngroup webpage\n, or on\nORCID\n/\nGoogle Scholar\n.", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/louise-slater"}, {"color": "orange", "font": {"color": "white"}, "id": "hydroclimatology school", "label": "hydroclimatology school", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e hydroclimatology school", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "floods drought", "label": "floods drought", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e floods drought", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "journal hydrology", "label": "journal hydrology", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e journal hydrology", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "forecasting climate", "label": "forecasting climate", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e forecasting climate", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "extreme weather", "label": "extreme weather", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e extreme weather", "type": "research_area"}, {"color": "cyan", "font": {"color": "white"}, "id": "Laura Stevens (they/them or she/her)", "label": "Laura Stevens (they/them or she/her)", "shape": "dot", "size": 10, "title": "\u003cb\u003eLaura Stevens (they/them or she/her)\u003c/b\u003e\u003cbr\u003eI am Associate Professor of Climate and Earth Surface Processes in the\nDepartment of Earth Sciences\n,\u00a0and a Supernumerary Fellow of\nUniversity College\n.\nIn Earth Sciences, I lead a research group on modern-day ice-sheet dynamics, with a focus on understanding how\nice-sheet surface melting modulates ice-sheet flow. Our approach pairs in-situ geophysical observations with time-dependent inverse methods, computational modeling, and remotely sensed observations. We investigate Greenland and Antarctic ice sheet, ice shelf, and outlet glacier flow dynamics to better understand the physical mechanisms that destabilize ice sheets with increased surface meltwater production in our warming climate.\u00a0For further details on the research, please see my\nfaculty webpage\n!\nMy role in the Intelligent Earth CDT is linking CDT DPhil researchers with advisors and research projects involving supervision within the Earth Sciences department.\u00a0For further information on the wide range of research happening in Earth Sciences, have a look through recent department\npublication highlights\nand our department\u0027s\nresearch themes\n.", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/laura-stevens"}, {"color": "orange", "font": {"color": "white"}, "id": "earth cdt", "label": "earth cdt", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e earth cdt", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "destabilize ice", "label": "destabilize ice", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e destabilize ice", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "modulates ice", "label": "modulates ice", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e modulates ice", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "geophysical observations", "label": "geophysical observations", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e geophysical observations", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "warming climate", "label": "warming climate", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e warming climate", "type": "research_area"}, {"color": "cyan", "font": {"color": "white"}, "id": "Philip Stier (he/him)", "label": "Philip Stier (he/him)", "shape": "dot", "size": 10, "title": "\u003cb\u003ePhilip Stier (he/him)\u003c/b\u003e\u003cbr\u003eI am a Professor of Atmospheric Physics working on physical aspects of the climate system, with a focus on clouds, aerosols, and radiation. Clouds play a key role in the climate system, modulating Earth\u0027s radiation balance and driving its hydrological cycle. The response of clouds to our changing climate (cloud feedbacks) and to changes in air pollution (aerosol-cloud interactions) remains poorly understood and constitutes the largest uncertainty in our ability to predict climate change.\nIn our\u00a0dynamic\nClimate Processes\nresearch group, we tackle these outstanding climate science questions from multiple approaches, combining theory, numerical modelling, Earth observations with AI and machine learning. \u00a0You can find my publications online under\nORCID\nand\nGoogle Scholar\n.", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/philip-stier"}, {"color": "orange", "font": {"color": "white"}, "id": "predict climate", "label": "predict climate", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e predict climate", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "dynamic climate", "label": "dynamic climate", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e dynamic climate", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "radiation clouds", "label": "radiation clouds", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e radiation clouds", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "response clouds", "label": "response clouds", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e response clouds", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "atmospheric physics", "label": "atmospheric physics", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e atmospheric physics", "type": "research_area"}, {"color": "cyan", "font": {"color": "white"}, "id": "Tianning (Tim) Tang", "label": "Tianning (Tim) Tang", "shape": "dot", "size": 10, "title": "\u003cb\u003eTianning (Tim) Tang\u003c/b\u003e\u003cbr\u003eTim Tang is currently working as a Course Director of the Intelligent Earth CDT programme and also an Eric and Wendy Schmidt AI in Science Postdoctoral Fellow at the University of Oxford. He graduated with a BEng from the University of Nottingham. He moved straight to a DPhil at Oxford publishing 5 journal papers including three JFMs. He won first place in the Osborne Reynolds Day competition for the UK\u0027s best DPhil student in fluid mechanics. His thesis covered the analysis of field data, experiments, numerical modelling using two different models and the application of data science methods to ocean engineering problems. His current research focuses on extreme events in fluid mechanics with an emphasis on machine learning, including data-driven predictions on extreme waves and extreme structural loading, considering leading order physics such as nonlinear wave dynamics and instabilities, breaking waves, and long-short wave interaction. His recent research on Rogue Wave has been showcased in\nBBC Science Focus\n.", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/tianning-tang"}, {"color": "orange", "font": {"color": "white"}, "id": "rogue wave", "label": "rogue wave", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e rogue wave", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "wave dynamics", "label": "wave dynamics", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e wave dynamics", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "predictions extreme", "label": "predictions extreme", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e predictions extreme", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "fluid mechanics", "label": "fluid mechanics", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e fluid mechanics", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "methods ocean", "label": "methods ocean", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e methods ocean", "type": "research_area"}, {"color": "cyan", "font": {"color": "white"}, "id": "Yee Whye Teh (he/him)", "label": "Yee Whye Teh (he/him)", "shape": "dot", "size": 10, "title": "\u003cb\u003eYee Whye Teh (he/him)\u003c/b\u003e\u003cbr\u003eI am a professor at the Department of Statistics of the University of Oxford and a research director at Google DeepMind. I work on statistical machine learning, with particular focus on probabilistic learning, deep learning, meta learning, Bayesian nonparametrics, variational inference, and Monte Carlo. Recently my publications have been in uncertainty quantification, continual learning, reliability \u0026 robustness, large language models, and AI for Science.\nFurther details can be found on my\nwebsite\nand research publications at\nGoogle Scholar page\n.", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/yee-whye-teh"}, {"color": "orange", "font": {"color": "white"}, "id": "publications uncertainty", "label": "publications uncertainty", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e publications uncertainty", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "google deepmind", "label": "google deepmind", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e google deepmind", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "statistics university", "label": "statistics university", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e statistics university", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "learning reliability", "label": "learning reliability", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e learning reliability", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "recently publications", "label": "recently publications", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e recently publications", "type": "research_area"}, {"color": "cyan", "font": {"color": "white"}, "id": "Adrian Thomas (he/him)", "label": "Adrian Thomas (he/him)", "shape": "dot", "size": 10, "title": "\u003cb\u003eAdrian Thomas (he/him)\u003c/b\u003e\u003cbr\u003eI am interested in all areas of Evolutionary Biomechanics and Bioinspired Engineering and Technology. My research focusses on theoretical and experimental analyses of biomechanics as a tool that allows the use of physics and engineering to make concrete qualitative and quantitative predictions about evolutionary adaptations, particularly around aerodynamics, stability and control in flying animals - the main research area of the Oxford Animal Flight group. I am also deeply interested in supporting the development and exploitation of bioinspired technologies, and have pursued this through the formation of spinout companies including Animal Dynamics ltd., where I was Founder, CSO and most recently CEO.", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/adrian-thomas"}, {"color": "orange", "font": {"color": "white"}, "id": "biomechanics tool", "label": "biomechanics tool", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e biomechanics tool", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "bioinspired technologies", "label": "bioinspired technologies", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e bioinspired technologies", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "exploitation bioinspired", "label": "exploitation bioinspired", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e exploitation bioinspired", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "dynamics founder", "label": "dynamics founder", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e dynamics founder", "type": "research_area"}, {"color": "orange", "font": {"color": "white"}, "id": "flying animals", "label": "flying animals", "shape": "dot", "size": 10, "title": "\u003cb\u003eResearch Area:\u003c/b\u003e flying animals", "type": "research_area"}, {"color": "cyan", "font": {"color": "white"}, "id": "Sophie Nixey (she/her)", "label": "Sophie Nixey (she/her)", "shape": "dot", "size": 10, "title": "\u003cb\u003eSophie Nixey (she/her)\u003c/b\u003e\u003cbr\u003e", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/sophie-nixey-0"}, {"color": "cyan", "font": {"color": "white"}, "id": "Helen Johnson", "label": "Helen Johnson", "shape": "dot", "size": 10, "title": "\u003cb\u003eHelen Johnson\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/helen-johnson"}, {"color": "cyan", "font": {"color": "white"}, "id": "Richard Katz", "label": "Richard Katz", "shape": "dot", "size": 10, "title": "\u003cb\u003eRichard Katz\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/richard-katz"}, {"color": "cyan", "font": {"color": "white"}, "id": "Steven Kelly", "label": "Steven Kelly", "shape": "dot", "size": 10, "title": "\u003cb\u003eSteven Kelly\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/steven-kelly"}, {"color": "cyan", "font": {"color": "white"}, "id": "Mike Kendall", "label": "Mike Kendall", "shape": "dot", "size": 10, "title": "\u003cb\u003eMike Kendall\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/mike-kendall"}, {"color": "cyan", "font": {"color": "white"}, "id": "Milan Kl\u00f6wer ", "label": "Milan Kl\u00f6wer ", "shape": "dot", "size": 10, "title": "\u003cb\u003eMilan Kl\u00f6wer \u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/milan-klower"}, {"color": "cyan", "font": {"color": "white"}, "id": "Paula Koelemeijer", "label": "Paula Koelemeijer", "shape": "dot", "size": 10, "title": "\u003cb\u003ePaula Koelemeijer\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/paula-koelemeijer"}, {"color": "cyan", "font": {"color": "white"}, "id": "Moritz Kraemer", "label": "Moritz Kraemer", "shape": "dot", "size": 10, "title": "\u003cb\u003eMoritz Kraemer\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/moritz-kraemer"}, {"color": "cyan", "font": {"color": "white"}, "id": "Felix Leach", "label": "Felix Leach", "shape": "dot", "size": 10, "title": "\u003cb\u003eFelix Leach\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/felix-leach"}, {"color": "cyan", "font": {"color": "white"}, "id": "Jamie Lorimer", "label": "Jamie Lorimer", "shape": "dot", "size": 10, "title": "\u003cb\u003eJamie Lorimer\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/jamie-lorimer"}, {"color": "cyan", "font": {"color": "white"}, "id": "Perla Maiolino", "label": "Perla Maiolino", "shape": "dot", "size": 10, "title": "\u003cb\u003ePerla Maiolino\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/perla-maiolino"}, {"color": "cyan", "font": {"color": "white"}, "id": "Yadvinder Malhi", "label": "Yadvinder Malhi", "shape": "dot", "size": 10, "title": "\u003cb\u003eYadvinder Malhi\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/yadvinder-malhi"}, {"color": "cyan", "font": {"color": "white"}, "id": "Hauke Marquardt", "label": "Hauke Marquardt", "shape": "dot", "size": 10, "title": "\u003cb\u003eHauke Marquardt\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/hauke-marquardt"}, {"color": "cyan", "font": {"color": "white"}, "id": "Chris Martin", "label": "Chris Martin", "shape": "dot", "size": 10, "title": "\u003cb\u003eChris Martin\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/chris-martin"}, {"color": "cyan", "font": {"color": "white"}, "id": "Tamsin Mather", "label": "Tamsin Mather", "shape": "dot", "size": 10, "title": "\u003cb\u003eTamsin Mather\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/tamsin-mather"}, {"color": "cyan", "font": {"color": "white"}, "id": "Robert Montgomery", "label": "Robert Montgomery", "shape": "dot", "size": 10, "title": "\u003cb\u003eRobert Montgomery\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/robert-montgomery"}, {"color": "cyan", "font": {"color": "white"}, "id": "David Moreno Mateos", "label": "David Moreno Mateos", "shape": "dot", "size": 10, "title": "\u003cb\u003eDavid Moreno Mateos\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/david-moreno-mateos"}, {"color": "cyan", "font": {"color": "white"}, "id": "Thomas Morstyn", "label": "Thomas Morstyn", "shape": "dot", "size": 10, "title": "\u003cb\u003eThomas Morstyn\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/thomas-morstyn"}, {"color": "cyan", "font": {"color": "white"}, "id": "Richard Palin", "label": "Richard Palin", "shape": "dot", "size": 10, "title": "\u003cb\u003eRichard Palin\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/richard-palin"}, {"color": "cyan", "font": {"color": "white"}, "id": "Tim Palmer", "label": "Tim Palmer", "shape": "dot", "size": 10, "title": "\u003cb\u003eTim Palmer\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/tim-palmer"}, {"color": "cyan", "font": {"color": "white"}, "id": "Ingmar Posner", "label": "Ingmar Posner", "shape": "dot", "size": 10, "title": "\u003cb\u003eIngmar Posner\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/ingmar-posner"}, {"color": "cyan", "font": {"color": "white"}, "id": "David Pyle", "label": "David Pyle", "shape": "dot", "size": 10, "title": "\u003cb\u003eDavid Pyle\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/david-pyle"}, {"color": "cyan", "font": {"color": "white"}, "id": "Tom Rainforth", "label": "Tom Rainforth", "shape": "dot", "size": 10, "title": "\u003cb\u003eTom Rainforth\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/tom-rainforth"}, {"color": "cyan", "font": {"color": "white"}, "id": "Moritz Riede", "label": "Moritz Riede", "shape": "dot", "size": 10, "title": "\u003cb\u003eMoritz Riede\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/moritz-riede"}, {"color": "cyan", "font": {"color": "white"}, "id": "Ricardo Rocha", "label": "Ricardo Rocha", "shape": "dot", "size": 10, "title": "\u003cb\u003eRicardo Rocha\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/ricardo-rocha"}, {"color": "cyan", "font": {"color": "white"}, "id": "Alex Rogers", "label": "Alex Rogers", "shape": "dot", "size": 10, "title": "\u003cb\u003eAlex Rogers\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/alex-rogers-0"}, {"color": "cyan", "font": {"color": "white"}, "id": "Gillian Rose", "label": "Gillian Rose", "shape": "dot", "size": 10, "title": "\u003cb\u003eGillian Rose\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/gillian-rose"}, {"color": "cyan", "font": {"color": "white"}, "id": "Barbara Rossi", "label": "Barbara Rossi", "shape": "dot", "size": 10, "title": "\u003cb\u003eBarbara Rossi\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/barbara-rossi"}, {"color": "cyan", "font": {"color": "white"}, "id": "Ben Sheldon", "label": "Ben Sheldon", "shape": "dot", "size": 10, "title": "\u003cb\u003eBen Sheldon\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/ben-sheldon"}, {"color": "cyan", "font": {"color": "white"}, "id": "Andrew Markham", "label": "Andrew Markham", "shape": "dot", "size": 10, "title": "\u003cb\u003eAndrew Markham\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/andrew-markham"}, {"color": "cyan", "font": {"color": "white"}, "id": "Avidesh Seenath", "label": "Avidesh Seenath", "shape": "dot", "size": 10, "title": "\u003cb\u003eAvidesh Seenath\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/avidesh-seenath"}, {"color": "cyan", "font": {"color": "white"}, "id": "Laura Stevens", "label": "Laura Stevens", "shape": "dot", "size": 10, "title": "\u003cb\u003eLaura Stevens\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/laura-stevens-0"}, {"color": "cyan", "font": {"color": "white"}, "id": "Louise Slater", "label": "Louise Slater", "shape": "dot", "size": 10, "title": "\u003cb\u003eLouise Slater\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/louise-slater-0"}, {"color": "cyan", "font": {"color": "white"}, "id": "Stephen Roberts", "label": "Stephen Roberts", "shape": "dot", "size": 10, "title": "\u003cb\u003eStephen Roberts\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/stephen-roberts-0"}, {"color": "cyan", "font": {"color": "white"}, "id": "Yee Whye Teh", "label": "Yee Whye Teh", "shape": "dot", "size": 10, "title": "\u003cb\u003eYee Whye Teh\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/yee-whye-teh-0"}, {"color": "cyan", "font": {"color": "white"}, "id": "Graham Taylor", "label": "Graham Taylor", "shape": "dot", "size": 10, "title": "\u003cb\u003eGraham Taylor\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/graham-taylor"}, {"color": "cyan", "font": {"color": "white"}, "id": "Philip Torr", "label": "Philip Torr", "shape": "dot", "size": 10, "title": "\u003cb\u003ePhilip Torr\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/philip-torr"}, {"color": "cyan", "font": {"color": "white"}, "id": "Niki Trigoni", "label": "Niki Trigoni", "shape": "dot", "size": 10, "title": "\u003cb\u003eNiki Trigoni\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/niki-trigoni"}, {"color": "cyan", "font": {"color": "white"}, "id": "Berta Verd Fernandez", "label": "Berta Verd Fernandez", "shape": "dot", "size": 10, "title": "\u003cb\u003eBerta Verd Fernandez\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/berta-verd-fernandez"}, {"color": "cyan", "font": {"color": "white"}, "id": "Mauricio Villarroel", "label": "Mauricio Villarroel", "shape": "dot", "size": 10, "title": "\u003cb\u003eMauricio Villarroel\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/mauricio-villarroel"}, {"color": "cyan", "font": {"color": "white"}, "id": "Konstantina Vogiatzaki", "label": "Konstantina Vogiatzaki", "shape": "dot", "size": 10, "title": "\u003cb\u003eKonstantina Vogiatzaki\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/konstantina-vogiatzaki"}, {"color": "cyan", "font": {"color": "white"}, "id": "Irina Voiculescu", "label": "Irina Voiculescu", "shape": "dot", "size": 10, "title": "\u003cb\u003eIrina Voiculescu\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/irina-voiculescu"}, {"color": "cyan", "font": {"color": "white"}, "id": "Richard Walker", "label": "Richard Walker", "shape": "dot", "size": 10, "title": "\u003cb\u003eRichard Walker\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/richard-walker"}, {"color": "cyan", "font": {"color": "white"}, "id": "Antje Weisheimer", "label": "Antje Weisheimer", "shape": "dot", "size": 10, "title": "\u003cb\u003eAntje Weisheimer\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/antje-weisheimer"}, {"color": "cyan", "font": {"color": "white"}, "id": "Tim Woollings", "label": "Tim Woollings", "shape": "dot", "size": 10, "title": "\u003cb\u003eTim Woollings\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/tim-woollings"}, {"color": "cyan", "font": {"color": "white"}, "id": "Nobuko Yoshida", "label": "Nobuko Yoshida", "shape": "dot", "size": 10, "title": "\u003cb\u003eNobuko Yoshida\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/nobuko-yoshida"}, {"color": "cyan", "font": {"color": "white"}, "id": "Noa Zilberman", "label": "Noa Zilberman", "shape": "dot", "size": 10, "title": "\u003cb\u003eNoa Zilberman\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/noa-zilberman"}, {"color": "cyan", "font": {"color": "white"}, "id": "Andrew Zisserman", "label": "Andrew Zisserman", "shape": "dot", "size": 10, "title": "\u003cb\u003eAndrew Zisserman\u003c/b\u003e\u003cbr\u003eNo description available", "type": "supervisor", "url": "https://intelligent-earth.ox.ac.uk/people/andrew-zisserman"}]);
+                  edges = new vis.DataSet([{"from": "Hannah Christensen (she/her)", "to": "improve predictions", "width": 1}, {"from": "Hannah Christensen (she/her)", "to": "weather climate", "width": 1}, {"from": "Hannah Christensen (she/her)", "to": "global climate", "width": 1}, {"from": "Hannah Christensen (she/her)", "to": "predictability el", "width": 1}, {"from": "Hannah Christensen (she/her)", "to": "el nino", "width": 1}, {"from": "Andrew Markham (he/him)", "to": "acoustic sensors", "width": 1}, {"from": "Andrew Markham (he/him)", "to": "individual tracking", "width": 1}, {"from": "Andrew Markham (he/him)", "to": "sensors signal", "width": 1}, {"from": "Andrew Markham (he/him)", "to": "using technology", "width": 1}, {"from": "Andrew Markham (he/him)", "to": "cyber physical", "width": 1}, {"from": "Stephen Roberts (he/him)", "to": "machines systems", "width": 1}, {"from": "Stephen Roberts (he/him)", "to": "scientific advisor", "width": 1}, {"from": "Stephen Roberts (he/him)", "to": "director oxford", "width": 1}, {"from": "Stephen Roberts (he/him)", "to": "learning approaches", "width": 1}, {"from": "Stephen Roberts (he/him)", "to": "training autonomous", "width": 1}, {"from": "Louise Slater (she/her)", "to": "hydroclimatology school", "width": 1}, {"from": "Louise Slater (she/her)", "to": "floods drought", "width": 1}, {"from": "Louise Slater (she/her)", "to": "journal hydrology", "width": 1}, {"from": "Louise Slater (she/her)", "to": "forecasting climate", "width": 1}, {"from": "Louise Slater (she/her)", "to": "extreme weather", "width": 1}, {"from": "Laura Stevens (they/them or she/her)", "to": "earth cdt", "width": 1}, {"from": "Laura Stevens (they/them or she/her)", "to": "destabilize ice", "width": 1}, {"from": "Laura Stevens (they/them or she/her)", "to": "modulates ice", "width": 1}, {"from": "Laura Stevens (they/them or she/her)", "to": "geophysical observations", "width": 1}, {"from": "Laura Stevens (they/them or she/her)", "to": "warming climate", "width": 1}, {"from": "Philip Stier (he/him)", "to": "predict climate", "width": 1}, {"from": "Philip Stier (he/him)", "to": "dynamic climate", "width": 1}, {"from": "Philip Stier (he/him)", "to": "radiation clouds", "width": 1}, {"from": "Philip Stier (he/him)", "to": "response clouds", "width": 1}, {"from": "Philip Stier (he/him)", "to": "atmospheric physics", "width": 1}, {"from": "Tianning (Tim) Tang", "to": "rogue wave", "width": 1}, {"from": "Tianning (Tim) Tang", "to": "wave dynamics", "width": 1}, {"from": "Tianning (Tim) Tang", "to": "predictions extreme", "width": 1}, {"from": "Tianning (Tim) Tang", "to": "fluid mechanics", "width": 1}, {"from": "Tianning (Tim) Tang", "to": "methods ocean", "width": 1}, {"from": "Yee Whye Teh (he/him)", "to": "publications uncertainty", "width": 1}, {"from": "Yee Whye Teh (he/him)", "to": "google deepmind", "width": 1}, {"from": "Yee Whye Teh (he/him)", "to": "statistics university", "width": 1}, {"from": "Yee Whye Teh (he/him)", "to": "learning reliability", "width": 1}, {"from": "Yee Whye Teh (he/him)", "to": "recently publications", "width": 1}, {"from": "Adrian Thomas (he/him)", "to": "biomechanics tool", "width": 1}, {"from": "Adrian Thomas (he/him)", "to": "bioinspired technologies", "width": 1}, {"from": "Adrian Thomas (he/him)", "to": "exploitation bioinspired", "width": 1}, {"from": "Adrian Thomas (he/him)", "to": "dynamics founder", "width": 1}, {"from": "Adrian Thomas (he/him)", "to": "flying animals", "width": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+                      network.on("stabilizationProgress", function(params) {
+                          document.getElementById('loadingBar').removeAttribute("style");
+                          var maxWidth = 496;
+                          var minWidth = 20;
+                          var widthFactor = params.iterations/params.total;
+                          var width = Math.max(minWidth,maxWidth * widthFactor);
+                          document.getElementById('bar').style.width = width + 'px';
+                          document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+                      });
+                      network.once("stabilizationIterationsDone", function() {
+                          document.getElementById('text').innerHTML = '100%';
+                          document.getElementById('bar').style.width = '496px';
+                          document.getElementById('loadingBar').style.opacity = 0;
+                          // really clean the dom element
+                          setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+                      });
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

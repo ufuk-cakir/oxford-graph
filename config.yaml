@@ -1,0 +1,5 @@
+base_url: "https://intelligent-earth.ox.ac.uk/people?page-4490321="
+scraped_file: "data/supervisors.json"
+detailed_file: "data/detailed_supervisors.json"
+keywords_file: "data/supervisors_with_keywords.json"
+plot_file: "graph.html"
